@@ -14,11 +14,11 @@
     .question button { margin-top: 10px; padding: 6px 12px; }
     .feedback { font-weight: bold; margin-top: 8px; }
 
-    /* Contenedor del mapa: mantiene proporción */
+    /* Ajuste del contenedor del mapa: reduce tamaño para que base quede visible */
     #map-container {
       position: relative;
-      width: 90%;
-      max-width: 1024px;
+      width: 60%;
+      max-width: 600px;
       margin: 20px auto;
       background: url('mapa_base.png') no-repeat center center;
       background-size: contain;
@@ -32,7 +32,7 @@
       overflow: hidden;
       box-sizing: border-box;
     }
-    /* Zonas ajustadas en porcentajes */
+    /* Posiciones en porcentajes, ajusta pequeños valores si es necesario */
     #drop1 { top: 13%;  left: 0%;  width: 27%; height: 30%; }
     #drop2 { top: 0%;   left: 23%; width: 55%; height: 32%; }
     #drop3 { top: 23%;  left: 25%; width: 59%; height: 44%; }
@@ -55,7 +55,7 @@
   <h1>🧩 Armando el Perú con STEAM</h1>
 
   <section id="quiz">
-    <!-- Preguntas -->
+    <!-- Pregunta 1 -->
     <div class="question" data-question="1" data-correct="c">
       <p><strong>1.</strong> ¿Qué significa el acrónimo STEAM y cuál es su objetivo principal en la educación?</p>
       <label><input type="radio" name="q1" value="a"> a) Solo agrupar materias difíciles.</label>
@@ -65,7 +65,7 @@
       <button class="btn" data-question="1">Responder</button>
       <p class="feedback"></p>
     </div>
-
+    <!-- Pregunta 2 -->
     <div class="question" data-question="2" data-correct="c">
       <p><strong>2.</strong> ¿Qué diferencia fundamental tiene el enfoque STEAM frente al modelo tradicional de enseñanza?</p>
       <label><input type="radio" name="q2" value="a"> a) Divide las materias en bloques rígidos.</label>
@@ -75,7 +75,7 @@
       <button class="btn" data-question="2">Responder</button>
       <p class="feedback"></p>
     </div>
-
+    <!-- Pregunta 3 -->
     <div class="question" data-question="3" data-correct="c">
       <p><strong>3.</strong> ¿Por qué es importante incluir el arte en el enfoque STEAM?</p>
       <label><input type="radio" name="q3" value="a"> a) Para entretener a los estudiantes sin conexión con lo académico.</label>
@@ -85,7 +85,7 @@
       <button class="btn" data-question="3">Responder</button>
       <p class="feedback"></p>
     </div>
-
+    <!-- Pregunta 4 -->
     <div class="question" data-question="4" data-correct="c">
       <p><strong>4.</strong> ¿Cuál es una característica central del enfoque STEAM?</p>
       <label><input type="radio" name="q4" value="a"> a) Se enfoca en la repetición de contenidos teóricos.</label>
@@ -95,7 +95,7 @@
       <button class="btn" data-question="4">Responder</button>
       <p class="feedback"></p>
     </div>
-
+    <!-- Pregunta 5 -->
     <div class="question" data-question="5" data-correct="b">
       <p><strong>5.</strong> ¿Cuál de las siguientes competencias clave para el siglo XXI promueve el enfoque STEAM?</p>
       <label><input type="radio" name="q5" value="a"> a) Obediencia y repetición mecánica.</label>
