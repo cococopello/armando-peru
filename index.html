@@ -14,7 +14,7 @@
     .question button { margin-top: 10px; padding: 6px 12px; }
     .feedback { font-weight: bold; margin-top: 8px; }
 
-    /* Contenedor del mapa: usa aspect-ratio para mantener proporción */
+    /* Contenedor del mapa: mantiene proporción */
     #map-container {
       position: relative;
       width: 90%;
@@ -32,7 +32,7 @@
       overflow: hidden;
       box-sizing: border-box;
     }
-    /* Posiciones ajustadas en porcentajes */
+    /* Zonas ajustadas en porcentajes */
     #drop1 { top: 13%;  left: 0%;  width: 27%; height: 30%; }
     #drop2 { top: 0%;   left: 23%; width: 55%; height: 32%; }
     #drop3 { top: 23%;  left: 25%; width: 59%; height: 44%; }
@@ -55,48 +55,138 @@
   <h1>🧩 Armando el Perú con STEAM</h1>
 
   <section id="quiz">
-    <!-- Pregunta 1 -->
+    <!-- Preguntas -->
     <div class="question" data-question="1" data-correct="c">
       <p><strong>1.</strong> ¿Qué significa el acrónimo STEAM y cuál es su objetivo principal en la educación?</p>
       <label><input type="radio" name="q1" value="a"> a) Solo agrupar materias difíciles.</label>
       <label><input type="radio" name="q1" value="b"> b) Ciencia, Tecnología, Energía, Arte y Matemáticas; busca enfocarse en el rendimiento académico.</label>
       <label><input type="radio" name="q1" value="c"> c) Ciencia, Tecnología, Ingeniería, Arte y Matemáticas; busca integrar disciplinas para resolver problemas del mundo real.</label>
       <label><input type="radio" name="q1" value="d"> d) Sociedad, Trabajo, Ecología, Arte y Matemáticas; busca formar ciudadanos responsables.</label>
-      <button onclick="checkAnswer(1)">Responder</button>
+      <button class="btn" data-question="1">Responder</button>
       <p class="feedback"></p>
     </div>
-    <!-- Pregunta 2 -->
+
     <div class="question" data-question="2" data-correct="c">
       <p><strong>2.</strong> ¿Qué diferencia fundamental tiene el enfoque STEAM frente al modelo tradicional de enseñanza?</p>
       <label><input type="radio" name="q2" value="a"> a) Divide las materias en bloques rígidos.</label>
       <label><input type="radio" name="q2" value="b"> b) Usa solo métodos memorísticos.</label>
       <label><input type="radio" name="q2" value="c"> c) Integra disciplinas en experiencias prácticas y significativas.</label>
       <label><input type="radio" name="q2" value="d"> d) Da más importancia a las matemáticas que a otras materias.</label>
-      <button onclick="checkAnswer(2)">Responder</button>
+      <button class="btn" data-question="2">Responder</button>
       <p class="feedback"></p>
     </div>
-    <!-- Pregunta 3 -->
+
     <div class="question" data-question="3" data-correct="c">
       <p><strong>3.</strong> ¿Por qué es importante incluir el arte en el enfoque STEAM?</p>
       <label><input type="radio" name="q3" value="a"> a) Para entretener a los estudiantes sin conexión con lo académico.</label>
       <label><input type="radio" name="q3" value="b"> b) Porque ayuda a decorar los salones de clase.</label>
       <label><input type="radio" name="q3" value="c"> c) Porque aporta creatividad y sensibilidad estética a la solución de problemas.</label>
       <label><input type="radio" name="q3" value="d"> d) Porque es una materia separada que no tiene relación con ciencia o tecnología.</label>
-      <button onclick="checkAnswer(3)">Responder</button>
+      <button class="btn" data-question="3">Responder</button>
       <p class="feedback"></p>
     </div>
-    <!-- Pregunta 4 -->
+
     <div class="question" data-question="4" data-correct="c">
       <p><strong>4.</strong> ¿Cuál es una característica central del enfoque STEAM?</p>
       <label><input type="radio" name="q4" value="a"> a) Se enfoca en la repetición de contenidos teóricos.</label>
       <label><input type="radio" name="q4" value="b"> b) Promueve el aprendizaje aislado de cada disciplina.</label>
       <label><input type="radio" name="q4" value="c"> c) Fomenta la integración de conocimientos para resolver situaciones reales.</label>
       <label><input type="radio" name="q4" value="d"> d) Requiere memorizar fórmulas sin aplicarlas.</label>
-      <button onclick="checkAnswer(4)">Responder</button>
+      <button class="btn" data-question="4">Responder</button>
       <p class="feedback"></p>
     </div>
-    <!-- Pregunta 5 -->
+
     <div class="question" data-question="5" data-correct="b">
       <p><strong>5.</strong> ¿Cuál de las siguientes competencias clave para el siglo XXI promueve el enfoque STEAM?</p>
       <label><input type="radio" name="q5" value="a"> a) Obediencia y repetición mecánica.</label>
-      <label><input type="radio" name="q5" value="b"> b) Creatividad, pensamiento crítico, colabora...```
+      <label><input type="radio" name="q5" value="b"> b) Creatividad, pensamiento crítico, colaboración y comunicación.</label>
+      <label><input type="radio" name="q5" value="c"> c) Trabajo solitario y silencio absoluto.</label>
+      <label><input type="radio" name="q5" value="d"> d) Aprendizaje basado solo en libros.</label>
+      <button class="btn" data-question="5">Responder</button>
+      <p class="feedback"></p>
+    </div>
+  </section>
+
+  <section id="map">
+    <h2>🗺️ Mapa de Perú</h2>
+    <div id="map-container">
+      <div id="drop1" class="drop-zone" data-piece="1"></div>
+      <div id="drop2" class="drop-zone" data-piece="2"></div>
+      <div id="drop3" class="drop-zone" data-piece="3"></div>
+      <div id="drop4" class="drop-zone" data-piece="4"></div>
+      <div id="drop5" class="drop-zone" data-piece="5"></div>
+    </div>
+    <div id="pieces-palette">
+      <img id="piece1" class="piece" data-piece="1" src="pieces/pieza1.png" draggable="false" alt="Pieza 1">
+      <img id="piece2" class="piece" data-piece="2" src="pieces/pieza2.png" draggable="false" alt="Pieza 2">
+      <img id="piece3" class="piece" data-piece="3" src="pieces/pieza3.png" draggable="false" alt="Pieza 3">
+      <img id="piece4" class="piece" data-piece="4" src="pieces/pieza4.png" draggable="false" alt="Pieza 4">
+      <img id="piece5" class="piece" data-piece="5" src="pieces/pieza5.png" draggable="false" alt="Pieza 5">
+    </div>
+  </section>
+
+  <script>
+    // Inicializa botones de respuestas
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const n = btn.getAttribute('data-question');
+        checkAnswer(n);
+      });
+    });
+
+    function checkAnswer(n) {
+      const container = document.querySelector(`.question[data-question="${n}"]`);
+      const selected = container.querySelector(`input[name="q${n}"]:checked`);
+      const feedback = container.querySelector('.feedback');
+      if (!selected) {
+        feedback.textContent = 'Por favor selecciona una opción.';
+        feedback.style.color = 'red';
+        return;
+      }
+      if (selected.value === container.getAttribute('data-correct')) {
+        feedback.style.color = 'green';
+        feedback.textContent = `¡Correcto! Ahora puedes arrastrar la pieza ${n}.`;
+        unlockPiece(n);
+      } else {
+        feedback.style.color = 'red';
+        feedback.textContent = 'Incorrecto, intenta nuevamente.';
+      }
+    }
+
+    // Drag & Drop mapa
+    document.querySelectorAll('.drop-zone').forEach(zone => {
+      zone.addEventListener('dragover', e => e.preventDefault());
+      zone.addEventListener('drop', handleDrop);
+    });
+
+    function unlockPiece(n) {
+      const piece = document.querySelector(`.piece[data-piece="${n}"]`);
+      if (!piece.classList.contains('unlocked')) {
+        piece.draggable = true;
+        piece.classList.add('unlocked');
+        piece.addEventListener('dragstart', e => e.dataTransfer.setData('text/plain', n));
+      }
+    }
+
+    function handleDrop(e) {
+      e.preventDefault();
+      const zone = e.currentTarget;
+      const pieceId = e.dataTransfer.getData('text/plain');
+      if (zone.getAttribute('data-piece') !== pieceId) {
+        alert('Esa pieza no corresponde a este espacio.');
+        return;
+      }
+      const piece = document.querySelector(`.piece[data-piece="${pieceId}"]`);
+      zone.appendChild(piece);
+      updateProgress();
+    }
+
+    function updateProgress() {
+      const placed = document.querySelectorAll('.drop-zone > .piece').length;
+      if (placed === 5) {
+        setTimeout(() => alert('¡Felicidades! Has completado el mapa de Perú.'), 100);
+      }
+    }
+  </script>
+</body>
+</html>
